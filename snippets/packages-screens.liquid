@@ -1,0 +1,486 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      .videoSelector {
+        margin-top: 5px;
+        display: flex;
+        flex-direction: row;
+        border-top: 0.5px solid white;
+        margin-top: 5%;
+        padding-top: 5%;
+        justify-content: space-between;
+      }
+      .dropdownStyle {
+        border-radius: 50px;
+        border: 1px solid #fff;
+        box-shadow: 0px 4px 45px 0px rgba(255, 255, 255, 0.6);
+        width: 90%;
+        padding: 5px;
+        background: transparent;
+        color: #fff;
+        margin-top: 15px;
+      }
+      .dropdownStyle option {
+        color: black;
+      }
+      .totalCheck {
+        margin-top: 5px;
+        display: flex;
+        flex-direction: row;
+        border-top: 0.5px solid white;
+        margin-top: 5%;
+        padding-top: 5%;
+        justify-content: space-between;
+      }
+      .packageDetails {
+        {% comment %} background-color: red; {% endcomment %}
+        {% comment %} height: 100%; {% endcomment %}
+        margin-top:4%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="products-section" class="Mainpackage">
+      <div class="top">Our Packages</div>
+      <div class="mainn2">
+        <div class="package1">
+          <img src="{{ '/picture.png' | asset_url }}" alt="Image">
+        </div>
+        <div class="packageDetails">
+          <div style="color:white;">
+            <img src="{{ '/starFilled.png' | asset_url }}" alt="Image">
+            <img src="{{ '/starFilled.png' | asset_url }}" alt="Image">
+            <img src="{{ '/starFilled.png' | asset_url }}" alt="Image">
+            <img src="{{ '/starFilled.png' | asset_url }}" alt="Image">
+            <img src="{{ '/starFilled.png' | asset_url }}" alt="Image">
+            <a
+              href="#"
+              style="
+                color: #FFF;
+                font-family: Lato;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                text-decoration-line: underline;
+
+                margin-left:10px;
+              "
+            >
+              234 Reviews
+            </a>
+          </div>
+          <div style="font-family: EFCO Brookshire; color: #FFCB05;font-size: 32px;font-style: normal;font-weight: 400;">
+            North Pole Chronicle's
+          </div>
+          <div
+            style="
+              color: #FFF;
+
+              leading-trim: both;
+
+              text-edge: cap;
+              font-family: Lato;
+              font-size: 20px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 24px;
+            "
+          >
+            Make Christmas Special by sending five video messages to your loved ones!
+          </div>
+          <div class="videoSelector">
+            <div style="width:50%">
+              <div
+                style="
+                  color: #FFCB05;
+
+                  font-family: Lato;
+                  font-size: 16px;
+                  font-style: normal;
+                  font-weight: 500;
+                  line-height: 20px;
+                "
+              >
+                Select Number of Videos:
+              </div>
+
+              <select name="custom-dropdown" id="custom-dropdown" class="dropdownStyle">
+                {% comment %}
+                   <option value="volvo">1 Video</option>
+                  <option value="saab">2 Videos</option>
+                  <option value="opel">3 Videos</option>
+                  <option value="audi">4 Videos</option>
+                  <option value="audi">5 Videos</option>
+                {% endcomment %}
+              </select>
+
+              {% comment %}
+                 <select id="product-variants">
+                  <option value="">Select a Variant</option>
+                  {% for variant in product.variants %}
+                    <option value="{{ variant.id }}">{{ variant.title }}</option>
+                  {% endfor %}
+                </select>
+              {% endcomment %}
+            </div>
+            <div style="width:50%">
+              <div
+                style="
+                  color: #FFCB05;
+
+                  font-family: Lato;
+                  font-size: 16px;
+                  font-style: normal;
+                  font-weight: 500;
+                  line-height: 20px;
+                "
+              >
+                Select Number of Videos:
+              </div>
+
+              <select name="collectionDrop" id="collectionDrop" class="dropdownStyle">
+                {% for collection in collections %}
+                  <option value="{{ collection.handle}}">{{ collection.title }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+          <div style="display:flex; align-items:center">
+            <img src="{{ '/closeIcon.png' | asset_url }}" alt="Banner Image">
+            <div
+              style="
+                color: #FFF;
+                leading-trim: both;
+                text-edge: cap;
+                font-family: Lato;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px;
+              "
+            >
+              Video 1: 3 months before Christmas
+            </div>
+          </div>
+          <div style="display:flex; align-items:center">
+            <img src="{{ '/tickIcon.png' | asset_url }}" alt="Banner Image">
+            <div
+              style="
+                color: #FFF;
+                leading-trim: both;
+                text-edge: cap;
+                font-family: Lato;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px;
+              "
+            >
+              Video 1: 3 months before Christmas
+            </div>
+          </div>
+          <div style="display:flex; align-items:center">
+            <img src="{{ '/tickIcon.png' | asset_url }}" alt="Banner Image">
+            <div
+              style="
+                color: #FFF;
+                leading-trim: both;
+                text-edge: cap;
+                font-family: Lato;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px;
+              "
+            >
+              Video 1: 3 months before Christmas
+            </div>
+          </div>
+          <div style="display:flex; align-items:center">
+            <img src="{{ '/tickIcon.png' | asset_url }}" alt="Banner Image">
+            <div
+              style="
+                color: #FFF;
+                leading-trim: both;
+                text-edge: cap;
+                font-family: Lato;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px;
+              "
+            >
+              Video 1: 3 months before Christmas
+            </div>
+          </div>
+          <div style="display:flex; align-items:center">
+            <img src="{{ '/tickIcon.png' | asset_url }}" alt="Banner Image">
+            <div
+              style="
+                color: #FFF;
+                leading-trim: both;
+                text-edge: cap;
+                font-family: Lato;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px;
+              "
+            >
+              Video 1: 3 months before Christmas
+            </div>
+          </div>
+          <div class="totalCheck">
+            <div id="selected-v">
+              <div
+                style="
+                  color: #FFF;
+
+                  font-family: Lato;
+                  font-size: 20px;
+                  font-style: normal;
+                  font-weight: 700;
+                  line-height: 20px;
+                "
+              >
+                Price
+              </div>
+              <div
+                style="
+                  color: #FFCB05;
+
+                  font-family: Lato;
+                  font-size: 30px;
+                  font-style: normal;
+                  font-weight: 700;
+                  line-height: 20px;
+                  margin-top: 10px;
+                "
+              >
+                $ <span id="selected-value"> 0 </span>
+              </div>
+            </div>
+            <button
+              style="
+                border-radius: 50px;
+                background: #FFCB05;
+                width:184px;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 10px 20px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+
+                color: #1D1C2D;
+                text-align: center;
+                font-family: Lato;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 550;
+                line-height: 20px;
+              "
+              onclick="onCart()"
+            >
+              <img
+                src="{{ '/checkout.png' | asset_url }}"
+                alt="Image"
+                style="margin-right:5px;"
+              >
+              <span
+                style="margin-right:5px;"
+              >
+                Checkout
+              </span>
+            </button>
+          </div>
+        </div>
+        {% comment %}
+           <div class="package2">
+              <div>
+                  <p>
+                      <i class="star"></i>
+                      <i class="star"></i>
+                      <i class="star"></i>
+                      <i class="star"></i>
+                      <i class="star"></i>
+                      234 Reviews
+                  </p>
+              </div>
+              <div class="north">North Pole Chronicle's</div>
+              <div class="para1">
+                  Make Christmas Special by sending five video messages to your loved ones!
+              </div>
+              <div>
+                  <hr class="line1"></hr>
+              </div>
+              <div class="parts">
+                  <div class="haed1">
+                      Select Number of Videos:
+                      <label>
+                          <button class="oneb">4 Videos</button>
+                      </label>
+                  </div>
+                  <div class="haed2">
+                      Select Number of Recipient:
+                      <button class="twob">2 Recipient</button>
+                  </div>
+              </div>
+              <div>
+                  <hr class="line2"></hr>
+              </div>
+              <div class="icons">
+                  <div>
+                      <i class="green-icon">✓</i>
+                      Video 1: 3 Month Before Christmas
+                  </div>
+                  <div>
+                      <i class="green-icon">✓</i>
+                      Video 2: 1-2 months before Christmas
+                  </div>
+                  <div>
+                      <i class="green-icon">✓</i>
+                      Video 3: 2-3 weeks before Christmas
+                  </div>
+                  <div>
+                      <i class="green-icon">✓</i>
+                      Video 4: Christmas Eve
+                  </div>
+                  <div>
+                      <i class="green-icon">✓</i>
+                      Video 5: On Christmas Day
+                  </div>
+              </div>
+              <div>
+                  <hr class="line3"></hr>
+              </div>
+              <div class="last">
+                  <p>Price</p>
+                  <div class="price">
+                      <p>$119</p>
+                  </div>
+                  <div class="btndiv">
+                      <button class="topbtn">Check Out</button>
+                  </div>
+              </div>
+          </div>
+        {% endcomment %}
+      </div>
+      <div>
+        <button class="buttan" id="myBtn">Learn More About Our Packages</button>
+      </div>
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Some text in the Modal..</p>
+        </div>
+      </div>
+
+      <script>
+        // Get the modal
+        var modal = document.getElementById('myModal');
+
+        // Get the button that opens the modal
+        var btn = document.getElementById('myBtn');
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName('close')[0];
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function () {
+          modal.style.display = 'block';
+        };
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+          modal.style.display = 'none';
+        };
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+          if (event.target == modal) {
+            modal.style.display = 'none';
+          }
+        };
+      </script>
+    </div>
+    <script>
+      var productContainer = []
+      var cartData = {};
+      {% comment %} $.getJSON(window.Shopify.routes.root + 'products.json', function (products) { {% endcomment %}
+      $.getJSON('/collections/' + 'recipient1' + '/products.json', function (products) {
+        var optionsHTML = '<option value="">Select a Product</option>';
+        console.log('custom-dropdown', products.products);
+        productContainer = products.products
+        products.products.forEach(function (product) {
+          optionsHTML += '<option value="' + product.variants[0].id + '">' + product.title + '</option>';
+        });
+        $('#custom-dropdown').html(optionsHTML); // Assuming you have an element with the ID 'product-select'
+      });
+      document.getElementById('custom-dropdown').addEventListener('change', function () {
+        var selectedValue = this.value;
+        var selectedProduct = productContainer.find(x => x.variants[0].id == selectedValue);
+        document.getElementById('selected-value').textContent = selectedProduct?.variants[0]?.price;
+        cartData = {
+          id: selectedProduct?.variants[0]?.id,
+          quantity: 1
+        }
+        // You can perform any additional actions with the selected value here
+        // For example, you can update another variable or an input field.
+      });
+
+      document.getElementById('collectionDrop').addEventListener('change', function () {
+        var selectedValue = this.value;
+        {% comment %} document.getElementById('selected-value').textContent = 'Selected Value: ' + selectedValue; {% endcomment %}
+        console.log('collectionDrop', selectedValue);
+
+        var collectionId = selectedValue; // Replace with the actual collection ID
+        var productsEndpoint = '/collections/' + collectionId + '/products.json';
+        document.getElementById('selected-value').textContent = 0
+        $.getJSON('/collections/' + collectionId + '/products.json', function (productsC) {
+          var optionsHTML = '<option value="">Select a Product</option>'
+          productsC.products.forEach(function (product) {
+            optionsHTML += '<option value="' + product.variants[0].id + '">' + product.title + '</option>';
+          });
+          $('#custom-dropdown').html(optionsHTML);
+          {% comment %} var productHtml = '';
+          products.products.forEach(function (product) {
+            productHtml += '<h2>' + product.title + '</h2>';
+            // Add more HTML elements as needed to display product details
+          });
+
+          $('#product-list').html(productHtml); {% endcomment %}
+        });
+        // You can perform any additional actions with the selected value here
+        // For example, you can update another variable or an input field.
+      });
+      function onCart () {
+        (function ($) {
+          $.ajax({
+            url: '/cart/add.js',
+            method: 'POST',
+            data: {
+              items: [
+                {% comment %} {
+                  id: 47424768966929, // Variant ID
+                  quantity: 2, // Adjust as needed
+                }, {% endcomment %}
+                cartData
+              ],
+            },
+            success: function () {
+              window.location.href = '/cart';
+            },
+            error: function (xhr, status, error) {
+              console.log('Error:', error);
+            },
+          });
+        })(jQuery);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,185 @@
+.fullsection {
+  /* background-color: #1d1c2d; */
+  background-color: #151221;
+  height: 100vh;
+  padding-top: 5%;
+}
+.phonenumber {
+  color: white;
+  font-family: Lato;
+  font-size: 14px;
+  font-style: normal;
+}
+.Mainbody {
+  background-color: rgb(41, 40, 60);
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+
+  width: 50%;
+  margin-top: 102px;
+  height: 29em;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: center;
+}
+.mainheading {
+  /* margin-top: 22px; */
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  /* margin-top: 2px; */
+  font-family: EFCO Brookshire;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px; /* 80% */
+  text-transform: capitalize;
+}
+.words {
+  color: white;
+  font-size: 16px;
+  font-weight: 80;
+  margin-top: 12px;
+  /* height: 82px;
+  width: 372px; */
+  font-family: Lato;
+  font-style: normal;
+}
+.touch {
+  color: #ffcb05;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 47.5px; /* 148.438% */
+  font-family: EFCO Brookshire;
+}
+.namef input {
+  background: #1d1c2d;
+  width: 100%;
+  border: 1px solid #1d1c2d;
+  border-radius: 6px;
+  /* height: 32px; */
+  margin-top: 12px;
+  padding: 15px;
+}
+.parentfield {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  /* background-color: #ffcb05; */
+}
+.parentfield input {
+  border: 1px solid #1d1c2d;
+  width: 100%;
+  /* width: 180px; */
+  border-radius: 6px;
+  /* height: 32px; */
+  background: #1d1c2d;
+  margin-top: 12px;
+  padding: 15px;
+}
+.commentf input {
+  height: 90px;
+  margin-top: 12px;
+  border-radius: 6px;
+  width: 100%;
+  /* width: 372px; */
+  border: 1px solid #1d1c2d;
+  background: #1d1c2d;
+  padding-left: 15px;
+  padding-top: 0px;
+}
+.SantaImage {
+  display: flex;
+  /* margin-left: auto; */
+  margin-left: 2px;
+}
+.SantaImage img {
+  height: 29em;
+  display: flex;
+  margin-left: -82px;
+}
+.section2 {
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  /* background-color: #ffcb05; */
+  width: 50%;
+}
+.phone {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  /* margin-top: 12px; */
+}
+.batan {
+  margin-top: 17px;
+  color: #1d1c2d;
+
+  text-align: center;
+}
+.batan button {
+  display: flex;
+  width: 184px;
+  height: 50px;
+  min-width: 184px;
+  padding: 19px 34.405px 21px 34.595px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  background: #ffcb05;
+  font-family: Lato;
+  font-weight: 600;
+}
+/* Media Queire */
+@media screen and (max-width: 700px) {
+  .Mainbody {
+    flex-direction: column;
+    height: 48em;
+    width: 26em;
+    margin-left: 53px;
+  }
+  .SantaImage img {
+    height: 24em;
+  }
+  .section2 {
+    width: 18em;
+    margin-top: 12px;
+    margin-left: 16px;
+  }
+
+  .number {
+    margin-left: 92px;
+    white-space: nowrap;
+    /* margin-top: 32px; */
+    /* align-items: center; */
+  }
+  .phonenumber {
+    margin-left: -62px;
+  }
+  .touch {
+    /* height: 4.5em; */
+    text-align: start;
+    line-height: 32px;
+    text-overflow: clip;
+    white-space: nowrap;
+    /* margin-top: 29px; */
+  }
+  .words {
+    margin-top: -62px;
+  }
+  .ph-icon {
+    margin-right: 67px;
+  }
+  .mainheading {
+    margin-right: 82px;
+  }
+}

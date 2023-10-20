@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <body>
+    <div class="video-container">
+      <video autoplay muted preload="auto" playsinline loop id="snowVideo">
+        <source src="{{ '/snow2.mp4' | asset_url }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <div class="main-home-section">
+        <div class="body1">
+          <div class="body2">
+            <div class="imgRight">
+              <img src="{{ '/sanata.png' | asset_url }}" alt="Banner Image">
+            </div>
+            <div class="para">
+              <h1>Make Christmas Unforgettable</h1>
+              <p>
+                Experience holiday magic with Messages from Santa! Get unique video messages from Santa himself,
+                straight from the North Pole. Share your child's holiday wishes and receive Santa's magic in your inbox.
+                Make this Christmas magical!
+              </p>
+              <button class="btn">Gift Messages From Santa</button>
+            </div>
+          </div>
+          <img class="bannerImage" src="{{ '/snowBanner.png' | asset_url }}" alt="Banner Image">
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const snowVideo = document.getElementById('snowVideo');
+    snowVideo.addEventListener('ended', function () {
+      this.currentTime = 0;
+      this.classList.add('looping');
+      setTimeout(() => {
+        this.classList.remove('looping');
+        this.play();
+      }, 1000); // 1 second fade duration
+    });
+  </script>
+</html>
