@@ -92,13 +92,6 @@
   margin-left: -22px;
 }
 /* Create a container for the border */
-.border-container {
-  border: 15px solid transparent; /* Create a transparent border */
-  border-image-source: url('/assets/borderImg.png'); /* Specify the image for the border */
-  border-image-slice: 50 fill; /* Adjust the slice size as needed */
-  border-image-width: 45px; /* Adjust the width of the border from the image */
-  margin-right: 10px;
-}
 
 /* Style your main content container */
 .box2 {

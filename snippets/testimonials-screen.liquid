@@ -1,6 +1,14 @@
 <!doctype html>
 <html>
-  <style></style>
+  <style>
+    .border-container-image {
+      border: 15px solid transparent;
+      {% comment %} border-image-source: url('{{ '/assets/borderimagegradient.png' | asset_url }}" alt="Image'); {% endcomment %}
+      border-image-slice: 50 fill;
+      border-image-width: 45px;
+      margin-right: 10px;
+    }
+  </style>
   <body>
     <div class="fullpage">
       <div class="test">Testimonials</div>
@@ -10,7 +18,10 @@
           <p class="b2">Don't take our word for it. Take theirs....</p>
         </div>
 
-        <div class="border-container">
+        <div
+          class="border-container-image"
+          style="border-image-source: url('{{ 'borderimagegradient.png' | asset_url }}');"
+        >
           <div class="box2">
             <div class="flex2">
               <div class="headd2">1 Video</div>
@@ -36,7 +47,10 @@
             <div class="whitebox1"></div>
           </div>
         </div>
-        <div class="border-container">
+        <div
+          class="border-container-image"
+          style="border-image-source: url('{{ 'borderimagegradient.png' | asset_url }}');"
+        >
           <div class="box2">
             {% comment %} <img src="{{ '/borderImg.png' | asset_url }}" alt="Jessica Brown"> {% endcomment %}
             {% comment %} <img src="your-image.jpg" alt="Border Image"> {% endcomment %}
@@ -65,7 +79,10 @@
             <div class="whitebox2"></div>
           </div>
         </div>
-        <div class="border-container">
+        <div
+          class="border-container-image"
+          style="border-image-source: url('{{ 'borderimagegradient.png' | asset_url }}');"
+        >
           <div class="box2">
             {% comment %} <img src="{{ '/borderImg.png' | asset_url }}" alt="Jessica Brown"> {% endcomment %}
             {% comment %} <img src="your-image.jpg" alt="Border Image"> {% endcomment %}
@@ -94,7 +111,10 @@
             <div class="whitebox2"></div>
           </div>
         </div>
-        <div class="border-container">
+        <div
+          class="border-container-image"
+          style="border-image-source: url('{{ 'borderimagegradient.png' | asset_url }}');"
+        >
           <div class="box2">
             {% comment %} <img src="{{ '/borderImg.png' | asset_url }}" alt="Jessica Brown"> {% endcomment %}
             {% comment %} <img src="your-image.jpg" alt="Border Image"> {% endcomment %}
@@ -123,7 +143,10 @@
             <div class="whitebox2"></div>
           </div>
         </div>
-        <div class="border-container">
+        <div
+          class="border-container-image"
+          style="border-image-source: url('{{ 'borderimagegradient.png' | asset_url }}');"
+        >
           <div class="box2">
             {% comment %} <img src="{{ '/borderImg.png' | asset_url }}" alt="Jessica Brown"> {% endcomment %}
             {% comment %} <img src="your-image.jpg" alt="Border Image"> {% endcomment %}

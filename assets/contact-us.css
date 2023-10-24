@@ -18,7 +18,7 @@
 
   width: 50%;
   margin-top: 102px;
-  height: 29em;
+  /* height: 29em; */
   border-radius: 12px;
   align-items: center;
   justify-content: center;
@@ -98,7 +98,8 @@
 .SantaImage img {
   height: 29em;
   display: flex;
-  margin-left: -82px;
+  width: 100%;
+  /* margin-left: -82px; */
 }
 .section2 {
   display: flex;
@@ -106,6 +107,8 @@
   flex-direction: column;
   /* background-color: #ffcb05; */
   width: 50%;
+  padding-right: 5%;
+  margin-bottom: 2%;
 }
 .phone {
   display: flex;
