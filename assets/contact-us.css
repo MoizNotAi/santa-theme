@@ -19,9 +19,9 @@
   width: 50%;
   margin-top: 102px;
   /* height: 29em; */
-  border-radius: 12px;
+  border-radius: 32px;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
 }
 .mainheading {
   /* margin-top: 22px; */
@@ -39,7 +39,7 @@
 .words {
   color: white;
   font-size: 16px;
-  font-weight: 80;
+  font-weight: 400;
   margin-top: 12px;
   /* height: 82px;
   width: 372px; */
@@ -141,9 +141,13 @@
   background: #ffcb05;
   font-family: Lato;
   font-weight: 600;
+  box-shadow: 0px 4px 45px 0px rgba(255, 255, 255, 0.6);
+  border: 0px;
+  margin-top: 15%;
+  margin-bottom: 15%;
 }
 /* Media Queire */
-@media screen and (max-width: 700px) {
+/* @media screen and (max-width: 700px) {
   .Mainbody {
     flex-direction: column;
     height: 48em;
@@ -162,19 +166,15 @@
   .number {
     margin-left: 92px;
     white-space: nowrap;
-    /* margin-top: 32px; */
-    /* align-items: center; */
   }
   .phonenumber {
     margin-left: -62px;
   }
   .touch {
-    /* height: 4.5em; */
     text-align: start;
     line-height: 32px;
     text-overflow: clip;
     white-space: nowrap;
-    /* margin-top: 29px; */
   }
   .words {
     margin-top: -62px;
@@ -184,5 +184,51 @@
   }
   .mainheading {
     margin-right: 82px;
+  }
+} */
+@media screen and (max-width: 768px) {
+  .fullsection {
+    /* background-color: #1d1c2d; */
+    height: 100%;
+    padding-bottom: 5%;
+  }
+  .Mainbody {
+    flex-direction: column;
+    width: 80%;
+    background-color: #2f2d48;
+  }
+  .SantaImage {
+    position: relative;
+    top: -60px;
+    z-index: 99;
+    /* padding-top: 0px; */
+  }
+  .SantaImage img {
+    /* margin-right: 90px; */
+    width: 100%;
+    height: 230px;
+  }
+  .section2 {
+    /* background-color: #fff; */
+    /* margin-top: 0px; */
+    align-items: center;
+    width: 100%;
+    margin-left: 2%;
+  }
+  .number {
+    display: none;
+  }
+  .words {
+    text-align: center;
+    width: 70%;
+  }
+  .namef {
+    width: 100%;
+  }
+  .commentf {
+    width: 100%;
+  }
+  .parentfield {
+    flex-direction: column;
   }
 }

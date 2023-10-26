@@ -19,7 +19,9 @@
 
   /* background-color: rgb(14, 11, 31); */
   background-color: #151221;
-  height: 100vh;
+  /* height: 100vh; */
+  align-items: center;
+  padding-bottom: 10%;
 }
 .main2 {
   display: flex;
@@ -27,10 +29,11 @@
   margin-top: 2px;
   /* justify-content: left; */
   align-items: center;
-  width: 80%;
+  width: 100%;
   /* justify-content: space-between; */
   /* overflow-x: hidden; */
-  margin-left: auto;
+  /* margin-left: auto; */
+  /* background-color: #ffcb05; */
 }
 .headingtop {
   color: #fff;
@@ -49,7 +52,7 @@
   height: 20%; */
   /* margin: auto; */
   /* margin-top: 102px; */
-  /* margin-left: 100px; */
+  margin-left: 100px;
   /* margin-left: 192px; */
 }
 .ptop {
@@ -140,7 +143,8 @@
   align-items: center;
   border-radius: 50px;
   background: #ffcb05;
-  box-shadow: 0px 4px 45px 0px rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 4px 45px 0px rgba(255, 255, 255, 0.5);
+  border: 0px;
 
   color: #1d1c2d;
   text-align: center;
@@ -151,7 +155,7 @@
   line-height: 20px;
 }
 /* Media Queire */
-@media screen and (max-width: 700px) {
+/* @media screen and (max-width: 700px) {
   .main2 {
     display: flex;
     flex-direction: column;
@@ -187,6 +191,10 @@
     margin-top: 92px;
     margin-left: -12px;
   }
+} */
+
+.custoMessage {
+  display: none;
 }
 
 /* how it works */
@@ -196,4 +204,67 @@
   justify-content: center;
   background-color: rgb(21, 18, 33);
   overflow-x: hidden;
+}
+.how-it-works-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .main2 {
+    display: flex;
+    flex-direction: column;
+    /* padding-right: 22px; */
+    align-items: center;
+    /* background-color: #ffcb05; */
+    margin-left: 0%;
+    width: 100%;
+  }
+  .gift {
+    display: none;
+  }
+  .custoMessage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+  }
+  .Grpimage {
+    margin-top: 5%;
+    margin-left: 10%;
+  }
+  .messageHeading {
+    font-family: EFCO Brookshire;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27.823px;
+    color: #ffcb05;
+    text-align: center;
+  }
+  .messageDescription {
+    font-family: Lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27.823px;
+    color: #fff;
+    text-align: center;
+  }
+  /* .butn {
+    margin-top: -24px;
+  } */
+
+  .how-it-works-mobile {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(21, 18, 33);
+    overflow-x: hidden;
+  }
+  .how-it-works {
+    display: none;
+  }
+  .headingtop {
+    font-size: 30px;
+    margin-top: 4%;
+  }
 }

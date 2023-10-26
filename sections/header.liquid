@@ -47,21 +47,9 @@
       .header-right {
         float: right;
       }
-
-      @media screen and (max-width: 500px) {
-        .header a {
-          float: none;
-          display: block;
-          text-align: left;
-        }
-
-        .header-right {
-          float: none;
-        }
-      }
       .Header{
         background-color:#0e0b1f;
-        display:"flex";
+        display:flex;
         align-items: center;
         padding-top:20px;
       }
@@ -79,10 +67,21 @@
       li a {
         text-decoration: none; /* Remove the underline from all links inside list items */
       }
+      .list{
+        display:flex;
+      }
+      @media screen and (max-width: 768px) {
+        .headingTittle{
+          font-size: 24px;
+        }
+        #Header-Content{
+          display:none;
+        }
+      }
     </style>
   </head>
   <body>
-    <div class="Header">
+    <div class="Header" id="Header-Content">
       {% comment %} <div class="headingTittle">{{ shop.name }}</div> {% endcomment %}
       <div class="headingTittle">Messages From Santa</div>
       <div class="list" id="navigation-bar">

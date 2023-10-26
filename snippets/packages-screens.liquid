@@ -293,7 +293,8 @@
         <!-- Modal content -->
         <div class="modal-content">
           <span class="close">&times;</span>
-          <p>Some text in the Modal..</p>
+          <div id="comment-fields" style="display:flex; flex-direction: column;"></div>
+          <button id="add-to-cart-button">Add to Cart</button>
         </div>
       </div>
 
@@ -326,160 +327,200 @@
       </script>
     </div>
     <script>
-      var productContainer = []
-      var cartData = {};
-      function setDropDownFunction(event) {
-        var selectedValue = this.value;
-        var selectedProduct = productContainer.find(x => x.variants[0].id == selectedValue);
-        document.getElementById('selected-value').textContent = selectedProduct?.variants[0]?.price;
-        cartData = {
-          id: selectedProduct?.variants[0]?.id,
-          quantity: 1
-        }
+               var productContainer = []
+               var cartData = {};
+               function setDropDownFunction(event) {
+                 var selectedValue = this.value;
+                 var selectedProduct = productContainer.find(x => x.variants[0].id == selectedValue);
+                 document.getElementById('selected-value').textContent = selectedProduct?.variants[0]?.price;
+                 cartData = {
+                   id: selectedProduct?.variants[0]?.id,
+                   quantity: 1
+                 }
 
 
-        // start
-        var productDesHtml = myApp.productsDes[0];
-        // Create a temporary element to parse the HTML
-        var tempElement = document.createElement('div');
-        tempElement.innerHTML = productDesHtml;
+                 // start
+                 var productDesHtml = myApp.productsDes[0];
+                 // Create a temporary element to parse the HTML
+                 var tempElement = document.createElement('div');
+                 tempElement.innerHTML = productDesHtml;
 
-        // Replace the image URLs with their Liquid versions
-        var images = tempElement.querySelectorAll('img');
-        if(selectedProduct?.title == '1 Video')
-        {
-          images[0].src = "{{ '/closeIcon.png' | asset_url }}";
-          images[1].src = "{{ '/closeIcon.png' | asset_url }}";
-          images[2].src = "{{ '/closeIcon.png' | asset_url }}";
-          images[3].src = "{{ '/closeIcon.png' | asset_url }}";
-          images[4].src = "{{ '/tickIcon.png' | asset_url }}";
-        }
-        else  if(selectedProduct?.title == '2 Videos')
-        {
-          images[0].src = "{{ '/tickIcon.png' | asset_url }}";
-          images[1].src = "{{ '/closeIcon.png' | asset_url }}";
-          images[2].src = "{{ '/closeIcon.png' | asset_url }}";
-          images[3].src = "{{ '/closeIcon.png' | asset_url }}";
-          images[4].src = "{{ '/tickIcon.png' | asset_url }}";
-        }
-        else  if(selectedProduct?.title == '3 Videos')
-        {
-          images[0].src = "{{ '/tickIcon.png' | asset_url }}";
-          images[1].src = "{{ '/tickIcon.png' | asset_url }}";
-          images[2].src = "{{ '/closeIcon.png' | asset_url }}";
-          images[3].src = "{{ '/closeIcon.png' | asset_url }}";
-          images[4].src = "{{ '/tickIcon.png' | asset_url }}";
-        }
-        else  if(selectedProduct?.title == '4 Videos')
-        {
-          images[0].src = "{{ '/tickIcon.png' | asset_url }}";
-          images[1].src = "{{ '/tickIcon.png' | asset_url }}";
-          images[2].src = "{{ '/tickIcon.png' | asset_url }}";
-          images[3].src = "{{ '/closeIcon.png' | asset_url }}";
-          images[4].src = "{{ '/tickIcon.png' | asset_url }}";
-        }
-        else  if(selectedProduct?.title == '5 Videos')
-        {
-          images[0].src = "{{ '/tickIcon.png' | asset_url }}";
-          images[1].src = "{{ '/tickIcon.png' | asset_url }}";
-          images[2].src = "{{ '/tickIcon.png' | asset_url }}";
-          images[3].src = "{{ '/tickIcon.png' | asset_url }}";
-          images[4].src = "{{ '/tickIcon.png' | asset_url }}";
-        }
-        else
-        {
-          images[0].src = "{{ '/closeIcon.png' | asset_url }}";
-          images[1].src = "{{ '/closeIcon.png' | asset_url }}";
-          images[2].src = "{{ '/closeIcon.png' | asset_url }}";
-          images[3].src = "{{ '/closeIcon.png' | asset_url }}";
-          images[4].src = "{{ '/tickIcon.png' | asset_url }}";
-        }
-        {% comment %} images.forEach(function (img) {
-          if(img.alt == "true"){
-            img.src = "{{ '/tickIcon.png' | asset_url }}";
-          }
-          else{
-            img.src = "{{ '/closeIcon.png' | asset_url }}";
-          }
-        }); {% endcomment %}
+                 // Replace the image URLs with their Liquid versions
+                 var images = tempElement.querySelectorAll('img');
+                 if(selectedProduct?.title == '1 Video')
+                 {
+                   images[0].src = "{{ '/closeIcon.png' | asset_url }}";
+                   images[1].src = "{{ '/closeIcon.png' | asset_url }}";
+                   images[2].src = "{{ '/closeIcon.png' | asset_url }}";
+                   images[3].src = "{{ '/closeIcon.png' | asset_url }}";
+                   images[4].src = "{{ '/tickIcon.png' | asset_url }}";
+                 }
+                 else  if(selectedProduct?.title == '2 Videos')
+                 {
+                   images[0].src = "{{ '/tickIcon.png' | asset_url }}";
+                   images[1].src = "{{ '/closeIcon.png' | asset_url }}";
+                   images[2].src = "{{ '/closeIcon.png' | asset_url }}";
+                   images[3].src = "{{ '/closeIcon.png' | asset_url }}";
+                   images[4].src = "{{ '/tickIcon.png' | asset_url }}";
+                 }
+                 else  if(selectedProduct?.title == '3 Videos')
+                 {
+                   images[0].src = "{{ '/tickIcon.png' | asset_url }}";
+                   images[1].src = "{{ '/tickIcon.png' | asset_url }}";
+                   images[2].src = "{{ '/closeIcon.png' | asset_url }}";
+                   images[3].src = "{{ '/closeIcon.png' | asset_url }}";
+                   images[4].src = "{{ '/tickIcon.png' | asset_url }}";
+                 }
+                 else  if(selectedProduct?.title == '4 Videos')
+                 {
+                   images[0].src = "{{ '/tickIcon.png' | asset_url }}";
+                   images[1].src = "{{ '/tickIcon.png' | asset_url }}";
+                   images[2].src = "{{ '/tickIcon.png' | asset_url }}";
+                   images[3].src = "{{ '/closeIcon.png' | asset_url }}";
+                   images[4].src = "{{ '/tickIcon.png' | asset_url }}";
+                 }
+                 else  if(selectedProduct?.title == '5 Videos')
+                 {
+                   images[0].src = "{{ '/tickIcon.png' | asset_url }}";
+                   images[1].src = "{{ '/tickIcon.png' | asset_url }}";
+                   images[2].src = "{{ '/tickIcon.png' | asset_url }}";
+                   images[3].src = "{{ '/tickIcon.png' | asset_url }}";
+                   images[4].src = "{{ '/tickIcon.png' | asset_url }}";
+                 }
+                 else
+                 {
+                   images[0].src = "{{ '/closeIcon.png' | asset_url }}";
+                   images[1].src = "{{ '/closeIcon.png' | asset_url }}";
+                   images[2].src = "{{ '/closeIcon.png' | asset_url }}";
+                   images[3].src = "{{ '/closeIcon.png' | asset_url }}";
+                   images[4].src = "{{ '/tickIcon.png' | asset_url }}";
+                 }
+                 {% comment %} images.forEach(function (img) {
+                   if(img.alt == "true"){
+                     img.src = "{{ '/tickIcon.png' | asset_url }}";
+                   }
+                   else{
+                     img.src = "{{ '/closeIcon.png' | asset_url }}";
+                   }
+                 }); {% endcomment %}
 
-        // Insert the modified HTML into the page
-        document.getElementById('product-des').innerHTML = tempElement.innerHTML;
-        // end
+                 // Insert the modified HTML into the page
+                 document.getElementById('product-des').innerHTML = tempElement.innerHTML;
+                 // end
 
-        // You can perform any additional actions with the selected value here
-        // For example, you can update another variable or an input field.
+                 // You can perform any additional actions with the selected value here
+                 // For example, you can update another variable or an input field.
+
+                 var selectedProductId = $(this).val();
+                 console.log("parse data",)
+      var numberOfFields = parseInt(selectedProduct.title.match(/\d+/g)[0]); // Assuming the selected value represents the number of fields.
+
+      if (!selectedProductId || isNaN(numberOfFields)) {
+         return; // Invalid selection
       }
-      document.addEventListener("DOMContentLoaded", setDropDownFunction);
-      {% comment %} $.getJSON(window.Shopify.routes.root + 'products.json', function (products) { {% endcomment %}
-      $.getJSON('/collections/' + 'recipient1' + '/products.json', function (products) {
-        var optionsHTML;
-        productContainer = products.products;
-        productContainer=productContainer.sort((a, b) => a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1);
-        productContainer.forEach(function (product) {
-          optionsHTML += '<option value="' + product.variants[0].id + '">' + product.title + '</option>';
-        });
-        $('#custom-dropdown').html(optionsHTML); // Assuming you have an element with the ID 'product-select'
-        document.getElementById('selected-value').textContent = productContainer[0]?.variants[0]?.price;
-        cartData = {
-          id: productContainer[0]?.variants[0]?.id,
-          quantity: 1
-        }
-      });
-      document.getElementById('custom-dropdown').addEventListener('change', setDropDownFunction);
 
-      document.getElementById('collectionDrop').addEventListener('change', function () {
-        var selectedValue = this.value;
-        {% comment %} document.getElementById('selected-value').textContent = 'Selected Value: ' + selectedValue; {% endcomment %}
-
-        var collectionId = selectedValue; // Replace with the actual collection ID
-        var productsEndpoint = '/collections/' + collectionId + '/products.json';
-        $.getJSON('/collections/' + collectionId + '/products.json', function (productsC) {
-          var optionsHTML;
-          productsC.products=productsC.products.sort((a, b) => a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1);
-          productsC.products.forEach(function (product) {
-            optionsHTML += '<option value="' + product.variants[0].id + '">' + product.title + '</option>';
-          });
-          $('#custom-dropdown').html(optionsHTML);
-          document.getElementById('selected-value').textContent = productsC.products[0]?.variants[0]?.price;
-          cartData = {
-            id:  productsC.products[0]?.variants[0]?.id,
-            quantity: 1
-          }
-          {% comment %} var productHtml = '';
-          products.products.forEach(function (product) {
-            productHtml += '<h2>' + product.title + '</h2>';
-            // Add more HTML elements as needed to display product details
-          });
-
-          $('#product-list').html(productHtml); {% endcomment %}
-        });
-        // You can perform any additional actions with the selected value here
-        // For example, you can update another variable or an input field.
-      });
-      function onCart () {
-        (function ($) {
-          $.ajax({
-            url: '/cart/add.js',
-            method: 'POST',
-            data: {
-              items: [
-                {% comment %} {
-                  id: 47424768966929, // Variant ID
-                  quantity: 2, // Adjust as needed
-                }, {% endcomment %}
-                cartData
-              ],
-            },
-            success: function () {
-              window.location.href = '/cart';
-            },
-            error: function (xhr, status, error) {
-              console.log('Error:', error);
-            },
-          });
-        })(jQuery);
+      var commentFields = '';
+      for (var i = 0; i < numberOfFields; i++) {
+         commentFields += '<input style="margin-bottom: 10px;" type="text" class="comment-input" placeholder="Add a child name for video ' + (i + 1) + '">';
       }
+
+      $('#comment-fields').html(commentFields);
+               }
+               // This script captures the comments entered by the customer and adds them as a custom property to the product in the cart.
+               document.addEventListener("DOMContentLoaded", setDropDownFunction);
+               {% comment %} $.getJSON(window.Shopify.routes.root + 'products.json', function (products) { {% endcomment %}
+               $.getJSON('/collections/' + 'recipient1' + '/products.json', function (products) {
+                 var optionsHTML;
+                 productContainer = products.products;
+                 productContainer=productContainer.sort((a, b) => a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1);
+                 productContainer.forEach(function (product) {
+                   optionsHTML += '<option value="' + product.variants[0].id + '">' + product.title + '</option>';
+                 });
+                 $('#custom-dropdown').html(optionsHTML); // Assuming you have an element with the ID 'product-select'
+                 document.getElementById('selected-value').textContent = productContainer[0]?.variants[0]?.price;
+                 cartData = {
+                   id: productContainer[0]?.variants[0]?.id,
+                   quantity: 1
+                 }
+               });
+               document.getElementById('custom-dropdown').addEventListener('change', setDropDownFunction);
+
+               document.getElementById('collectionDrop').addEventListener('change', function () {
+                 var selectedValue = this.value;
+                 {% comment %} document.getElementById('selected-value').textContent = 'Selected Value: ' + selectedValue; {% endcomment %}
+
+                 var collectionId = selectedValue; // Replace with the actual collection ID
+                 var productsEndpoint = '/collections/' + collectionId + '/products.json';
+                 $.getJSON('/collections/' + collectionId + '/products.json', function (productsC) {
+                   var optionsHTML;
+                   productsC.products=productsC.products.sort((a, b) => a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1);
+                   productsC.products.forEach(function (product) {
+                     optionsHTML += '<option value="' + product.variants[0].id + '">' + product.title + '</option>';
+                   });
+                   $('#custom-dropdown').html(optionsHTML);
+                   document.getElementById('selected-value').textContent = productsC.products[0]?.variants[0]?.price;
+                   cartData = {
+                     id:  productsC.products[0]?.variants[0]?.id,
+                     quantity: 1
+                   }
+                   {% comment %} var productHtml = '';
+                   products.products.forEach(function (product) {
+                     productHtml += '<h2>' + product.title + '</h2>';
+                     // Add more HTML elements as needed to display product details
+                   });
+
+                   $('#product-list').html(productHtml); {% endcomment %}
+                 });
+                 // You can perform any additional actions with the selected value here
+                 // For example, you can update another variable or an input field.
+               });
+               function onCart (cart) {
+                 (function ($) {
+                   $.ajax({
+                     url: '/cart/add.js',
+                     method: 'POST',
+                     data: {
+                       items: [
+                         {% comment %} {
+                           id: 47424768966929, // Variant ID
+                           quantity: 2, // Adjust as needed
+                         }, {% endcomment %}
+                         cart
+                       ],
+                     },
+                     success: function () {
+                       window.location.href = '/cart';
+                     },
+                     error: function (xhr, status, error) {
+                       console.log('Error:', error);
+                     },
+                   });
+                 })(jQuery);
+               }
+
+               // Capture the product data and add comments when the "Add to Cart" button is clicked
+         $('#add-to-cart-button').on('click', function () {
+          var selectedProductId = $('#custom-dropdown').val();
+          var commentInputs = $('.comment-input');
+
+          if (!selectedProductId) {
+             alert('Please select a product.');
+             return;
+          }
+
+          var cartData = {
+             id: selectedProductId,
+             quantity: 1,
+             properties: {}
+          };
+
+          commentInputs.each(function (index, input) {
+             cartData.properties['Child Name ' + (index + 1)] = $(input).val();
+          });
+           // Construct cart data with selected product and comment
+           // Add the product to the cart
+           onCart(cartData)
+         });
     </script>
   </body>
 </html>

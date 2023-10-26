@@ -341,3 +341,9 @@
 }
 
 /* this is moiz's css */
+
+@media screen and (max-width: 768px) {
+  .Mainpackage {
+    display: none;
+  }
+}
